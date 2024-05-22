@@ -4,10 +4,10 @@ from mysql.connector import Error
 try:
     # Establish a connection to the MySQL database
     connection = mysql.connector.connect(
-        host='your_host',
-        user='your_username',
-        password='your_password',
-        database='your_database'
+        host='localhost',
+        user='python_user',
+        password='Python',
+        database='test_join'
     )
 
     if connection.is_connected():
@@ -15,8 +15,8 @@ try:
         cursor = connection.cursor()
 
         # Define a parameterized query to retrieve data
-        query = "SELECT * FROM your_table WHERE column_name = %s"
-        value = ('some_value',)
+        query = "SELECT * FROM studente WHERE Classe = %s"
+        value = ('2',)
 
         # Execute the parameterized query
         cursor.execute(query, value)
